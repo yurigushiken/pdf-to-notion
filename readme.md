@@ -1,5 +1,5 @@
 PDF to Notion
-This project automates the process of extracting text from PDFs, converting the text into a structured format, and uploading the data to a Notion database.
+This project automates the process of extracting text from PDFs, converting the text into a structured format, and uploading the data to a Notion database. It leverages the Claude Haiku language model to organize data such as the title, URL, authors, publication year, tags, and abstract, replacing the manual work of metadata entry.
 
 Directory Structure
 scss
@@ -25,30 +25,26 @@ pdf-to-notion/
 ├── txt_to_database.py
 └── utils.py
 Setup Instructions
-Clone the repository:
-
+1. Clone the Repository:
 sh
 Copy code
 git clone https://github.com/your-username/pdf-to-notion.git
 cd pdf-to-notion
-Create and activate a virtual environment:
-
+2. Create and Activate a Virtual Environment:
 sh
 Copy code
 python -m venv pdf-to-notion-env
-source pdf-to-notion-env/bin/activate   # On Windows use: pdf-to-notion-env\Scripts\activate
-Install dependencies:
-
+source pdf-to-notion-env/bin/activate  # On Windows use: pdf-to-notion-env\Scripts\activate
+3. Install Dependencies:
 sh
 Copy code
 pip install -r requirements.txt
-Configure the project:
-
+4. Configure the Project:
 Rename config_template.py to config.py.
 Fill in your API keys and other necessary information in config.py.
-Set up your Notion database:
-
+5. Set Up Your Notion Database:
 Create a new database in Notion with the following properties:
+
 Name (title)
 Authors (rich_text)
 Publication Year (rich_text)
@@ -56,22 +52,19 @@ Tags (multi_select)
 PDF Link (url)
 Abstract (rich_text)
 Usage
-Convert PDFs to text:
-
+1. Convert PDFs to Text:
 Run the pdf_to_txt.py script to extract text from your PDFs and save them as .txt files:
 
 sh
 Copy code
 python pdf_to_txt.py
-Extract metadata from text files and save to CSV:
-
+2. Extract Metadata from Text Files and Save to CSV:
 Run the txt_to_database.py script to extract metadata from the text files and save it to a CSV file:
 
 sh
 Copy code
 python txt_to_database.py
-Upload metadata to Notion:
-
+3. Upload Metadata to Notion:
 Run the database_to_notion.py script to upload the metadata from the CSV file to your Notion database:
 
 sh
@@ -91,9 +84,11 @@ ignore folder/
 # Ignore metadata.csv but keep example_metadata.csv
 metadata/metadata.csv
 
-# Ignore all PDFs and text files
-PDFs/
-txt/
+# Ignore all PDFs and text files but keep the directories
+PDFs/*
+!PDFs/.gitkeep
+txt/*
+!txt/.gitkeep
 
 # Ignore the process_log.log file
 process_log.log
@@ -105,4 +100,10 @@ Make sure to include an example metadata.csv in the metadata directory for users
 Notes
 Ensure your Google Drive and Notion API credentials are correctly set up in the config.py file.
 Share your Google Drive folder with the service account email from your Google API credentials.
-This should help you get started with the project and provide clear instructions for others who want to use it.
+This project aims to streamline the process of managing and organizing PDF documents, making it easier to keep track of important information and access it efficiently.
+
+
+
+
+
+
