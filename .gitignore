@@ -1,0 +1,22 @@
+# Ignore the credentials directory
+credentials/
+
+# Ignore the ignore folder directory
+ignore folder/
+
+# Ignore metadata.csv but keep example_metadata.csv
+metadata/metadata.csv
+
+# Ignore all PDFs and subdirectories within PDFs but keep the PDFs directory
+PDFs/*
+!PDFs/.gitkeep
+
+# Ignore all text files and subdirectories within txt but keep the txt directory
+txt/*
+!txt/.gitkeep
+
+# Ignore the process_log.log file
+process_log.log
+
+# Ignore the config.py file
+config.py
