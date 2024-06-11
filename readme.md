@@ -13,8 +13,10 @@ This project automates the process of extracting text from PDFs, converting the 
 
 Before you start, you will need:
 
-- **Google Drive API credentials**: Download your credentials JSON file from the Google Cloud Console.
-- **Notion API token**: Obtain your Notion API token and Notion database ID.
+- **Google Drive API credentials**: Create new project and service acccount with editor priveliges. Download your credentials JSON file from the Google Cloud Console.
+- **Google Drive folder sharing**: Share your target PDF folder with your Google service account email address.
+- **Notion integration**: Create a new integration with Notion. Obtain your Notion API token and Notion database ID.
+- **Notion Page Connections**: Connect your Notion page to your new integration (wtihin Notion page menu).
 - **Claude Haiku API key**: Add your Claude Haiku API key.
 
 ## Setup Instructions
