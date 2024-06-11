@@ -3,8 +3,11 @@
 This project automates the process of extracting text from PDFs, converting the text into a structured format, and uploading the data to a Notion database. It leverages the Claude Haiku language model to organize data such as the title, URL, authors, publication year, tags, and abstract, replacing the manual work of metadata entry. The project integrates with Google Drive for PDF storage and retrieval and requires API credentials for both Google Drive and Notion.
 
 ![Screenshot](./screenshots/Screenshot%202024-06-11%20044459.png)
+- PDF entries in notion with Name,Authors,Publication_Year,Tags,PDF_link,Abstract
 ![Screenshot](./screenshots/Screenshot%202024-06-11%20123601.png)
+- copy of PDF entries database with filters for specific class
 ![Screenshot](./screenshots/Screenshot%202024-06-11%20123639.png)
+- inside an entry
 
 ## Prerequisites
 
@@ -71,7 +74,7 @@ Run the `pdf_to_txt.py` script to extract text from your PDFs and save them as .
 - Sets up Google Drive API credentials and initializes the Google Drive service.
 - Lists files in a specified Google Drive folder.
 - Extracts text from each PDF file (using OCR if necessary).
-- Adds metadata (title, Google Drive URL, and tag) to the extracted text.
+- Adds metadata (title, Google Drive URL, and tag) to the extracted text. This creates conditions favorable for the language model in the next step (`txt_to_database.py`)
 - Saves the extracted text and metadata to a corresponding text file in the output directory.
 
 ### Extract Metadata from Text Files and Save to CSV
@@ -84,7 +87,7 @@ Run the `txt_to_database.py` script to extract metadata from the text files and 
 - Initializes the connection to the Claude Haiku API.
 - Prompt to Claude Haiku: The script sends a prompt to Claude Haiku that includes a snippet of the text (default 800 tokens) and asks it to extract metadata in a Name,Authors,Publication_Year,Tags,PDF_link,Abstract format.
 - Walks through the specified input directory and processes each text file.
-- Extracts metadata such as Name, Authors, Publication Year, Tags, PDF Link, and Abstract from the text content using Claude Haiku.
+- Extracts metadata such as Name, Authors, Publication Year, Tags, PDF Link, and Abstract from the text from first 800 tokens (default 800 tokens, you can change this).
 - Saves the extracted metadata to a CSV file.
 
 ### Upload Metadata to Notion
