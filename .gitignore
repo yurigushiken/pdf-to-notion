@@ -1,6 +1,3 @@
-# Ignore the credentials directory
-credentials/
-
 # Ignore the ignore folder directory
 ignore folder/
 
@@ -20,3 +17,9 @@ process_log.log
 
 # Ignore the config.py file
 config.py
+
+# Ignore the credentials folder
+credentials/
+
+# Ignore the __pycache__ directory
+__pycache__/
