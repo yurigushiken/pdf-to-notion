@@ -101,3 +101,4 @@ if __name__ == "__main__":
         print(f"Error: Input directory {input_directory} does not exist")
     else:
         process_text_files(input_directory, csv_path)
+
