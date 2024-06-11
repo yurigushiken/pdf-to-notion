@@ -6,11 +6,11 @@ metadata/metadata.csv
 
 # Ignore all PDFs and subdirectories within PDFs but keep the PDFs directory
 PDFs/*
-!PDFs/.gitkeep
+!PDFs/README.md
 
 # Ignore all text files and subdirectories within txt but keep the txt directory
 txt/*
-!txt/.gitkeep
+!txt/README.md
 
 # Ignore the process_log.log file
 process_log.log
