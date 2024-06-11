@@ -23,7 +23,8 @@ pdf-to-notion/
 ├── txt/
 │ └── README.md (indicating this is where the text files should go)
 ├── txt_to_database.py
-└── utils.py
+├── utils.py
+└── requirements.txt
 
 markdown
 Copy code
