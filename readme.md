@@ -1,65 +1,83 @@
-PDF to Notion
+
+# PDF to Notion
+
 This project automates the process of extracting text from PDFs, converting the text into a structured format, and uploading the data to a Notion database. It leverages the Claude Haiku language model to organize data such as the title, URL, authors, publication year, tags, and abstract, replacing the manual work of metadata entry. The project integrates with Google Drive for PDF storage and retrieval and requires API credentials for both Google Drive and Notion.
 
-Prerequisites
+## Prerequisites
+
 Before you start, you will need:
 
-Google Drive API credentials: Download your credentials JSON file from the Google Cloud Console.
-Notion API token: Obtain your Notion API token and Notion database ID.
-Claude Haiku API key: Add your Claude Haiku API key.
-Setup Instructions
-Step 1: Clone the Repository
+- **Google Drive API credentials**: Download your credentials JSON file from the Google Cloud Console.
+- **Notion API token**: Obtain your Notion API token and Notion database ID.
+- **Claude Haiku API key**: Add your Claude Haiku API key.
+
+## Setup Instructions
+
+### Step 1: Clone the Repository
+
 Clone the repository to your local machine:
 
-git clone https://github.com/your-username/pdf-to-notion.git
-cd pdf-to-notion
+    git clone https://github.com/your-username/pdf-to-notion.git
+    cd pdf-to-notion
 
-Step 2: Create and Activate a Virtual Environment
+### Step 2: Create and Activate a Virtual Environment
+
 Create a virtual environment to manage your project dependencies:
 
-python -m venv pdf-to-notion-env
-source pdf-to-notion-env/bin/activate # On Windows use: pdf-to-notion-env\Scripts\activate
+    python -m venv pdf-to-notion-env
+    source pdf-to-notion-env/bin/activate # On Windows use: pdf-to-notion-env\Scripts\activate
 
-Step 3: Install Dependencies
+### Step 3: Install Dependencies
+
 Install the required Python packages:
 
-pip install fitz pytesseract google-auth google-api-python-client anthropic
+    pip install fitz pytesseract google-auth google-api-python-client anthropic
 
-Step 4: Configure the Project
+### Step 4: Configure the Project
+
 Rename config_template.py to config.py:
-mv config_template.py config.py
+
+    mv config_template.py config.py
 
 Fill in your API keys and other necessary information in config.py.
 
-Google Drive API credentials: Place your credentials JSON file in the credentials directory.
-Notion API token: Add your Notion API token and Notion database ID to config.py.
-Claude Haiku API key: Add your Claude Haiku API key to config.py.
-Step 5: Set Up Your Notion Database
+- **Google Drive API credentials**: Place your credentials JSON file in the credentials directory.
+- **Notion API token**: Add your Notion API token and Notion database ID to config.py.
+- **Claude Haiku API key**: Add your Claude Haiku API key to config.py.
+
+### Step 5: Set Up Your Notion Database
+
 Create a new database in Notion with the following properties:
 
-Name (title)
-Authors (rich_text)
-Publication Year (rich_text)
-Tags (multi_select)
-PDF Link (url)
-Abstract (rich_text)
-Usage
-Convert PDFs to Text
+- Name (title)
+- Authors (rich_text)
+- Publication Year (rich_text)
+- Tags (multi_select)
+- PDF Link (url)
+- Abstract (rich_text)
+
+## Usage
+
+### Convert PDFs to Text
+
 Run the pdf_to_txt.py script to extract text from your PDFs and save them as .txt files:
 
-python pdf_to_txt.py
+    python pdf_to_txt.py
 
-Extract Metadata from Text Files and Save to CSV
+### Extract Metadata from Text Files and Save to CSV
+
 Run the txt_to_database.py script to extract metadata from the text files and save it to a CSV file:
 
-python txt_to_database.py
+    python txt_to_database.py
 
-Upload Metadata to Notion
+### Upload Metadata to Notion
+
 Run the database_to_notion.py script to upload the metadata from the CSV file to your Notion database:
 
-python database_to_notion.py
+    python database_to_notion.py
 
-Additional Notes
+## Additional Notes
+
 Ensure your Google Drive and Notion API credentials are correctly set up in the config.py file.
 Share your Google Drive folder with the service account email from your Google API credentials.
 This setup helps streamline the process of managing PDF metadata and integrating it seamlessly with Notion, making it an efficient tool for organizing and accessing your documents.
