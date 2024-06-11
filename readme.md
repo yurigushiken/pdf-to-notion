@@ -3,7 +3,7 @@
 
 This project automates the process of extracting text from PDFs, converting the text into a structured format, and uploading the data to a Notion database. It leverages the Claude Haiku language model to organize data such as the title, URL, authors, publication year, tags, and abstract, replacing the manual work of metadata entry. The project integrates with Google Drive for PDF storage and retrieval and requires API credentials for both Google Drive and Notion.
 
-![Alt text](screenshots\Screenshot 2024-06-11 044459.png)
+![Screenshot](screenshots/Screenshot 2024-06-11 044459.png)
 
 
 ## Prerequisites
