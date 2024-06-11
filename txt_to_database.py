@@ -19,7 +19,7 @@ class MetadataExtractor:
                     "Authors: John Doe, Jane Smith\nPublication Year: 2021\n"
                     "Tags: Social Media\n"
                     "PDF Link: https://example.com\n"
-                    "Abstract: This study explores the impact of social media on the academic performance of university students."
+                    "Abstract (brief, three sentences max): This study explores the impact of social media on the academic performance of university students. James are less likely to study when social media is a high presence in their lives. There are implications for how teachers should approach technology use in the classroom."
                 )
             }
         ]

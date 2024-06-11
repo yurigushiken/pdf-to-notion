@@ -9,7 +9,8 @@ def create_notion_page(metadata):
         "Content-Type": "application/json",
         "Notion-Version": "2022-06-28"
     }
-    
+
+    # Convert all metadata values to strings to avoid JSON encoding issues
     data = {
         "parent": {"database_id": NOTION_DATABASE_ID},
         "properties": {
@@ -17,7 +18,7 @@ def create_notion_page(metadata):
                 "title": [
                     {
                         "text": {
-                            "content": metadata.get('Name', 'Unknown Title')
+                            "content": str(metadata.get('Name', 'Unknown Title'))
                         }
                     }
                 ]
@@ -26,7 +27,7 @@ def create_notion_page(metadata):
                 "rich_text": [
                     {
                         "text": {
-                            "content": metadata.get('Authors', 'Unknown Authors')
+                            "content": str(metadata.get('Authors', 'Unknown Authors'))
                         }
                     }
                 ]
@@ -35,7 +36,7 @@ def create_notion_page(metadata):
                 "rich_text": [
                     {
                         "text": {
-                            "content": metadata.get('Publication_Year', 'Unknown Year')
+                            "content": str(metadata.get('Publication_Year', 'Unknown Year'))
                         }
                     }
                 ]
@@ -43,29 +44,56 @@ def create_notion_page(metadata):
             "Tags": {
                 "multi_select": [
                     {
-                        "name": metadata.get('Tags', 'No Tag')
+                        "name": str(metadata.get('Tags', 'No Tag'))
                     }
                 ]
             },
             "PDF Link": {
-                "url": metadata.get('PDF_link', 'No PDF Link')
+                "url": str(metadata.get('PDF_link', 'No PDF Link'))
             },
             "Abstract": {
                 "rich_text": [
                     {
                         "text": {
-                            "content": metadata.get('Abstract', 'No Abstract')
+                            "content": str(metadata.get('Abstract', 'No Abstract'))
                         }
                     }
                 ]
             }
         }
     }
+
+    try:
+        response = requests.post('https://api.notion.com/v1/pages', headers=headers, json=data)
+        response.raise_for_status()  # Raises an error for bad status codes
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error: {e}")
+        return {}
+
+def check_entry_exists(name):
+    headers = {
+        "Authorization": f"Bearer {NOTION_TOKEN}",
+        "Content-Type": "application/json",
+        "Notion-Version": "2022-06-28"
+    }
     
-    response = requests.post('https://api.notion.com/v1/pages', headers=headers, json=data)
-    if response.status_code != 200:
-        print(f"Error: {response.status_code} - {response.text}")
-    return response.json()
+    query = {
+        "filter": {
+            "property": "Name",
+            "title": {
+                "equals": name
+            }
+        }
+    }
+    
+    response = requests.post(f'https://api.notion.com/v1/databases/{NOTION_DATABASE_ID}/query', headers=headers, json=query)
+    
+    if response.status_code == 200:
+        results = response.json().get('results')
+        if results:
+            return True
+    return False
 
 def update_notion_from_csv(csv_path):
     df = pd.read_csv(csv_path)
@@ -75,13 +103,19 @@ def update_notion_from_csv(csv_path):
     
     for index, row in df.iterrows():
         metadata = {
-            "Name": row['Name'],
-            "Authors": row['Authors'],
-            "Publication_Year": row['Publication_Year'] if pd.notnull(row['Publication_Year']) else 'Unknown Year',
-            "Tags": row['Tags'],
-            "PDF_link": row.get('PDF_link', 'No PDF Link'),
-            "Abstract": row.get('Abstract', 'No Abstract')
+            "Name": str(row['Name']),
+            "Authors": str(row['Authors']),
+            "Publication_Year": str(row['Publication_Year']) if pd.notnull(row['Publication_Year']) else 'Unknown Year',
+            "Tags": str(row['Tags']),
+            "PDF_link": str(row.get('PDF_link', 'No PDF Link')),
+            "Abstract": str(row.get('Abstract', 'No Abstract'))
         }
+        
+        # Check if the entry already exists
+        if check_entry_exists(metadata['Name']):
+            print(f"Entry already exists for {metadata['Name']}, skipping...")
+            continue
+        
         response = create_notion_page(metadata)
         if response.get('id'):
             print(f"Updated Notion for {metadata['Name']} by {metadata['Authors']}")
