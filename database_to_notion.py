@@ -67,9 +67,12 @@ def create_notion_page(metadata):
         response = requests.post('https://api.notion.com/v1/pages', headers=headers, json=data)
         response.raise_for_status()  # Raises an error for bad status codes
         return response.json()
-    except requests.exceptions.RequestException as e:
-        print(f"Error: {e}")
-        return {}
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP error occurred: {http_err}")
+        print(f"Response content: {response.content}")
+    except Exception as err:
+        print(f"Other error occurred: {err}")
+    return {}
 
 def check_entry_exists(name):
     headers = {
@@ -93,6 +96,8 @@ def check_entry_exists(name):
         results = response.json().get('results')
         if results:
             return True
+    else:
+        print(f"Failed to query Notion database: {response.status_code} - {response.text}")
     return False
 
 def update_notion_from_csv(csv_path):
@@ -117,7 +122,7 @@ def update_notion_from_csv(csv_path):
             continue
         
         response = create_notion_page(metadata)
-        if response.get('id'):
+        if response and response.get('id'):
             print(f"Updated Notion for {metadata['Name']} by {metadata['Authors']}")
         else:
             print(f"Failed to update Notion for {metadata['Name']} by {metadata['Authors']}")
