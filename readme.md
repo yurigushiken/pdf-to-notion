@@ -7,16 +7,17 @@ This project automates the process of extracting text from PDFs, converting the 
 - run pdf_to_txt.py to create language model-ready .txt versions of PDFs
 - run txt_to_database.py to get Claude 3 to read first 1200 tokens of .txt file and write to metadata.csv
 - run database_to_notion.py to upload meetadata.csv contents to Notion
-
-- PDFs in a Google Drive-linked directory
+## Screenshots:
+- Start Here: PDFs in a Google Drive-linked directory
 ![Screenshot](./screenshots/Screenshot%202024-06-12%20221932.png)
 
-- text files converted from PDF as preparation for language processing  
+- Then: Text files converted from PDF as preparation for language processing  
 ![Screenshot](./screenshots/Screenshot%202024-06-12%20221947.png)
 
-- the result: formatted line entry with name,author,year,tags,pdf-link,abstract (some errors due to: missing data/language processing/text formatting). please note the direct link to your file in Google Drive - highly convenient access.
+- The Result: Formatted line entry - compare to the original file names! (some errors due to: missing data/language processing/text formatting). please note the direct link to your file in Google Drive - highly convenient access!
 ![Screenshot](./screenshots/Screenshot%202024-06-12%20222101.png)
 
+## Example use cases:
 - PDF entries in notion with name,author,year,tags,pdf-link,abstract
 ![Screenshot](./screenshots/Screenshot%202024-06-11%20044459.png)
 
