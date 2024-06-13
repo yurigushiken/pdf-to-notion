@@ -87,9 +87,9 @@ Run the `txt_to_database.py` script to extract metadata from the text files and 
 
 **Detailed Steps:**
 - Initializes the connection to the Claude Haiku API.
-- Prompt to Claude Haiku: The script sends a prompt to Claude Haiku that includes a snippet of the text (default 800 tokens) and asks it to extract metadata in a Name,Authors,Publication_Year,Tags,PDF_link,Abstract format.
+- Prompt to Claude Haiku: The script sends a prompt to Claude Haiku that includes a snippet of the text (default 1200 tokens - about 1 page - you can adjust for more context) and asks it to extract metadata in a Name,Authors,Publication_Year,Tags,PDF_link,Abstract format.
 - Walks through the specified input directory and processes each text file.
-- Extracts metadata such as Name, Authors, Publication Year, Tags, PDF Link, and Abstract from the text from first 800 tokens (default 800 tokens, you can change this).
+- Extracts metadata such as Name, Authors, Publication Year, Tags, PDF Link, and Abstract from the text from first 1200 tokens.
 - Saves the extracted metadata to a CSV file.
 
 ### Upload Metadata to Notion
