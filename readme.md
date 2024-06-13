@@ -1,13 +1,32 @@
 # PDF to Notion
 
-This project automates the process of extracting text from PDFs, converting the text into a structured format, and uploading the data to a Notion database. It leverages the Claude Haiku language model to organize data such as the title, URL, authors, publication year, tags, and abstract, replacing the manual work of metadata entry. The project integrates with Google Drive for PDF storage and retrieval and requires API credentials for both Google Drive and Notion.
+This project automates the process of extracting text from PDFs, converting the text into a structured format, and uploading the data to a Notion database. It uses the Claude Haiku language model to organize data such as the title, URL, authors, publication year, tags, and abstract, replacing the manual work of metadata entry. The project integrates with Google Drive for PDF storage and retrieval and requires API credentials for both Google Drive and Notion.
 
-![Screenshot](./screenshots/Screenshot%202024-06-11%20044459.png)
-- PDF entries in notion with Name,Authors,Publication_Year,Tags,PDF_link,Abstract
-![Screenshot](./screenshots/Screenshot%202024-06-11%20123601.png)
-- copy of PDF entries database with filters for specific class
-![Screenshot](./screenshots/Screenshot%202024-06-11%20123639.png)
-- inside an entry
+## Workflow:
+- put PDFs in Google Drive dir on PC
+- run pdf_to_txt.py to create language model-ready .txt versions of PDFs
+- run txt_to_database.py to get Claude 3 to read first 1200 tokens of .txt file and write to metadata.csv
+- run database_to_notion.py to upload meetadata.csv contents to Notion
+
+- PDFs in a Google Drive-linked directory
+![Screenshot](./screenshots/Screenshot%202024-06-12%20221932)
+
+- text files converted from PDF as preparation for language processing  
+![Screenshot](./screenshots/Screenshot%202024-06-12%20221947)
+
+- the result: formatted line entry with name,author,year,tags,pdf-link,abstract (some errors due to: missing data/language processing/text formatting). please note the direct link to your file in Google Drive - highly convenient access.
+![Screenshot](./screenshots/Screenshot%202024-06-12%20222101)
+
+- PDF entries in notion with name,author,year,tags,pdf-link,abstract
+![Screenshot](./screenshots/Screenshot%202024-06-11%20044459)
+
+- example use case: filters for specific tags
+![Screenshot](./screenshots/Screenshot%202024-06-11%20123601)
+
+- example entry: a look inside an entry 
+![Screenshot](./screenshots/Screenshot%202024-06-11%20123639)
+
+
 
 ## Prerequisites
 
