@@ -3,10 +3,10 @@
 This project automates the process of extracting text from PDFs, converting the text into a structured format, and uploading the data to a Notion database. It uses the Claude Haiku language model to organize data such as the title, URL, authors, publication year, tags, and abstract, replacing the manual work of metadata entry. The project integrates with Google Drive for PDF storage and retrieval and requires API credentials for both Google Drive and Notion.
 
 ## Workflow:
-- put PDFs in Google Drive dir on PC
-- run pdf_to_txt.py to create language model-ready .txt versions of PDFs
-- run txt_to_database.py to get Claude 3 to read first 1200 tokens of .txt file and write to metadata.csv
-- run database_to_notion.py to upload meetadata.csv contents to Notion
+- Put PDFs in Google Drive dir on PC
+- Run pdf_to_txt.py to create language model-ready .txt versions of PDFs
+- Run txt_to_database.py to get Claude 3 to read first 1200 tokens of .txt file and write to metadata.csv
+- Run database_to_notion.py to upload meetadata.csv contents to Notion
 ## Screenshots:
 - Start Here: PDFs in a Google Drive-linked directory
 ![Screenshot](./screenshots/Screenshot%202024-06-12%20221932.png)
@@ -22,7 +22,7 @@ This project automates the process of extracting text from PDFs, converting the 
 - All PDF entries in notion
 ![Screenshot](./screenshots/Screenshot%202024-06-12%20224412.png)
 
-- example use case: filters for specific tags (example: filter for specific class)
+- Example use case: filters for specific tags (example: filter for specific class)
 ![Screenshot](./screenshots/Screenshot%202024-06-11%20123601.png)
 
 - Example entry
