@@ -1,6 +1,6 @@
 # PDF to Notion
 
-![Screenshot](./screenshots/ad.png)
+![Screenshot](./screenshots/ad.jpg)
 
 This project automates the process of extracting text from PDFs, converting the text into a structured format, and uploading the data to a Notion database. It uses the Claude 3 language model to organize data such as the title, URL, authors, publication year, tags, and abstract, replacing the manual work of metadata entry. The project integrates with Google Drive for PDF storage and retrieval. It requires API credentials for Claude 3, Google Drive, and Notion.
 
