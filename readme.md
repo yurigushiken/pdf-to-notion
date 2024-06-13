@@ -9,22 +9,22 @@ This project automates the process of extracting text from PDFs, converting the 
 - run database_to_notion.py to upload meetadata.csv contents to Notion
 
 - PDFs in a Google Drive-linked directory
-![Screenshot](./screenshots/Screenshot%202024-06-12%20221932)
+![Screenshot](./screenshots/Screenshot%202024-06-12%20221932.png)
 
 - text files converted from PDF as preparation for language processing  
-![Screenshot](./screenshots/Screenshot%202024-06-12%20221947)
+![Screenshot](./screenshots/Screenshot%202024-06-12%20221947.png)
 
 - the result: formatted line entry with name,author,year,tags,pdf-link,abstract (some errors due to: missing data/language processing/text formatting). please note the direct link to your file in Google Drive - highly convenient access.
-![Screenshot](./screenshots/Screenshot%202024-06-12%20222101)
+![Screenshot](./screenshots/Screenshot%202024-06-12%20222101.png)
 
 - PDF entries in notion with name,author,year,tags,pdf-link,abstract
-![Screenshot](./screenshots/Screenshot%202024-06-11%20044459)
+![Screenshot](./screenshots/Screenshot%202024-06-11%20044459.png)
 
 - example use case: filters for specific tags
-![Screenshot](./screenshots/Screenshot%202024-06-11%20123601)
+![Screenshot](./screenshots/Screenshot%202024-06-11%20123601.png)
 
 - example entry: a look inside an entry 
-![Screenshot](./screenshots/Screenshot%202024-06-11%20123639)
+![Screenshot](./screenshots/Screenshot%202024-06-11%20123639.png)
 
 
 
