@@ -30,3 +30,4 @@ def save_metadata_to_csv(metadata, csv_path):
 def setup_logging():
     logging.basicConfig(filename='process_log.log', level=logging.INFO,
                         format='%(asctime)s:%(levelname)s:%(message)s')
+
