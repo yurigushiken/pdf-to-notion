@@ -21,8 +21,6 @@ This project automates the process of extracting text from PDFs, converting the 
 ![Screenshot](./screenshots/Screenshot%202024-06-12%20230332.png)
 
 ## Example use cases:
-- All PDF entries in notion
-![Screenshot](./screenshots/Screenshot%202024-06-12%20224412.png)
 
 - Example use case: filters for specific tags (example: filter for specific class)
 ![Screenshot](./screenshots/Screenshot%202024-06-11%20123601.png)
