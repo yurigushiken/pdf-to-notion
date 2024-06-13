@@ -154,3 +154,4 @@ if __name__ == "__main__":
     input_directory = r"C:\Users\yurig\My Drive\!PDFs\pdf-to-notion\PDFs"
     output_directory = r"C:\Users\yurig\My Drive\!PDFs\pdf-to-notion\txt"
     process_pdfs(input_directory, output_directory)
+
