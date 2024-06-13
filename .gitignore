@@ -1,4 +1,8 @@
-# Ignore the ignore folder directory
+# Ignore metadata/processed_files.txt
+metadata/processed_files.txt
+metadata\processed_files.txt
+
+# Ignore folder/
 ignore folder/
 
 # Ignore metadata.csv but keep example_metadata.csv
