@@ -23,10 +23,10 @@ This project automates the process of extracting text from PDFs, converting the 
 ## Example use cases:
 
 - Example use case: filters for specific tags (example: filter for specific class)
-![Screenshot](./screenshots/Screenshot%202024-06-11%20123601.png)
+![Screenshot](./screenshots/Screenshot%202024-06-12%20234236.png)
 
 - Example entry
-![Screenshot](./screenshots/Screenshot%202024-06-11%20123639.png)
+![Screenshot](./screenshots/Screenshot%202024-06-12%20234356.png)
 
 
 
