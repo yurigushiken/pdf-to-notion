@@ -19,13 +19,13 @@ This project automates the process of extracting text from PDFs, converting the 
 ![Screenshot](./screenshots/Screenshot%202024-06-12%20222101.png)
 
 ## Example use cases:
-- PDF entries in notion organized by Year
+- All PDF entries in notion
 ![Screenshot](./screenshots/Screenshot%202024-06-12%20224412.png)
 
-- example use case: filters for specific tags
+- example use case: filters for specific tags (example: filter for specific class)
 ![Screenshot](./screenshots/Screenshot%202024-06-11%20123601.png)
 
-- example entry: a look inside an entry 
+- Example entry
 ![Screenshot](./screenshots/Screenshot%202024-06-11%20123639.png)
 
 
