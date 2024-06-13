@@ -14,3 +14,4 @@ if not ANTHROPIC_API_KEY or not NOTION_TOKEN:
 
 if not SERVICE_ACCOUNT_FILE or not GOOGLE_DRIVE_FOLDER_ID:
     raise ValueError("Google Drive credentials or folder ID not found. Please set them before running the script.")
+
