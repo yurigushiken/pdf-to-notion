@@ -16,7 +16,7 @@ This project automates the process of extracting text from PDFs, converting the 
 
 - The Result: Formatted line entry - compare to the original file names! (some errors due to: missing data/language processing/text formatting). 
 - URL to original PDF in Google Drive - highly convenient access!
-![Screenshot](./screenshots/Screenshot%202024-06-12%20222101.png)
+![Screenshot](./screenshots/Screenshot%202024-06-12%20230332.png)
 
 ## Example use cases:
 - All PDF entries in notion
