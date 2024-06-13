@@ -15,7 +15,7 @@ This project automates the process of extracting text from PDFs, converting the 
 ![Screenshot](./screenshots/Screenshot%202024-06-12%20221947.png)
 
 - The Result: Formatted line entry - compare to the original file names! (some errors due to: missing data/language processing/text formatting). 
-- Please note the direct link to your file in Google Drive - highly convenient access!
+- URL to original PDF in Google Drive - highly convenient access!
 ![Screenshot](./screenshots/Screenshot%202024-06-12%20222101.png)
 
 ## Example use cases:
