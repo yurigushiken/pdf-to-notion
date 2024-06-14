@@ -131,9 +131,9 @@ def process_text_files(input_directory, csv_path, tracking_file):
 
 if __name__ == "__main__":
     setup_logging()
-    input_directory = r"C:\Users\yurig\My Drive\!PDFs\pdf-to-notion\txt"
-    csv_path = r"C:\Users\yurig\My Drive\!PDFs\pdf-to-notion\metadata\metadata.csv"
-    tracking_file = r"C:\Users\yurig\My Drive\!PDFs\pdf-to-notion\metadata\processed_files.txt"
+    input_directory = r"C:\Users\yurig\My Drive\[03] projects\[01] GitHub\pdf-to-notion\txt"
+    csv_path = r"C:\Users\yurig\My Drive\[03] projects\[01] GitHub\pdf-to-notion\metadata\metadata.csv"
+    tracking_file = r"C:\Users\yurig\My Drive\[03] projects\[01] GitHub\pdf-to-notion\metadata\processed_files.txt"
     
     if not os.path.exists(input_directory):
         print(f"Error: Input directory {input_directory} does not exist")

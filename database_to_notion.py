@@ -106,7 +106,8 @@ def update_notion_from_csv(csv_path):
     # Print the columns of the DataFrame to verify the column names
     print("Debug: Columns in CSV file:", df.columns.tolist())
     
-    for index, row in df.iterrows():
+    # Reverse the DataFrame to process from bottom to top
+    for index, row in df.iloc[::-1].iterrows():
         metadata = {
             "Name": str(row['Name']),
             "Authors": str(row['Authors']),
@@ -129,5 +130,5 @@ def update_notion_from_csv(csv_path):
 
 if __name__ == "__main__":
     setup_logging()
-    csv_path = r"C:\Users\yurig\My Drive\!PDFs\pdf-to-notion\metadata\metadata.csv"
+    csv_path = r"C:\Users\yurig\My Drive\[03] projects\[01] GitHub\pdf-to-notion\metadata\metadata.csv"
     update_notion_from_csv(csv_path)

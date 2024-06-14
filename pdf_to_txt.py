@@ -151,7 +151,6 @@ def process_pdfs(input_directory, output_directory):
 
 if __name__ == "__main__":
     setup_logging()
-    input_directory = r"C:\Users\yurig\My Drive\!PDFs\pdf-to-notion\PDFs"
-    output_directory = r"C:\Users\yurig\My Drive\!PDFs\pdf-to-notion\txt"
+    input_directory = r"C:\Users\yurig\My Drive\[03] projects\[01] GitHub\pdf-to-notion\PDFs"
+    output_directory = r"C:\Users\yurig\My Drive\[03] projects\[01] GitHub\pdf-to-notion\txt"
     process_pdfs(input_directory, output_directory)
-
